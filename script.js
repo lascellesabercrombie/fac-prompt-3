@@ -13,7 +13,7 @@ function checkStringLength(string) {
   return false;
 }
 
-//check that string has at least one lowercase, at least one uppercase character and a mixture of numbers and letters
+//check that string has at least one lowercase, at least one uppercase character and at least one number
 
 function checkCaseMixture (string) {
   let lowerCaseCounter = 0;
@@ -30,25 +30,12 @@ function checkCaseMixture (string) {
       numberCounter++;
     }
     }  
-  if (upperCaseCounter > 0 && lowerCaseCounter > 0 && numberCounter > 0 && numberCounter < string.length){
+  if (upperCaseCounter > 0 && lowerCaseCounter > 0 && numberCounter > 0){
     return true;
   }
   return false;
 }
 
-// let numberCounter = 0;
-// for (i = 0; i < testString.length; i++){
-//  if (Number.isInteger(parseInt(testString[i]))){
-//       numberCounter++;
-//     }
-// }
-// if (numberCounter > 0 && numberCounter < testString.length){
-//   return true;
-// }
-// else {
-//   return false;
-// }
-// }
 
 
 //combines functions and feeds in inputString
@@ -65,9 +52,4 @@ if (checkStringLength(inputString.value) == true && checkCaseMixture(inputString
 //button
 
 button.addEventListener("click", combinedUsernameFunction);
-
-//I caused myself a lot of confusion by putting in a console.log in third position in the event listener parentheses. That seemed to make it run before the button was clicked.
-
-//other main lesson seemed to be to keep levels of abstraction separate - so first two functions working with "string" and only third with "inputString"
-
 
